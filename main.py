@@ -89,6 +89,8 @@ class App(QWidget):
     def sql_ex(self):
         if str(self.sql_enter.toPlainText()).lower().startswith("create"):
             typ = "create"
+        elif str(self.sql_enter.toPlainText()).lower().startswith("call"):
+            typ = "create"
         else:
             typ = "exec"
         with self.connection.cursor() as cursor:
